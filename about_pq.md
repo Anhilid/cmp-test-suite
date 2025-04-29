@@ -6,16 +6,9 @@ SPDX-License-Identifier: Apache-2.0
 
 # Post-Quantum Cryptography Integration Documentation
 
-### Table of Contents
-1. [Design Decisions](#design-decisions)
-2. [PQ Keys](#pq-keys)
-    - [Adding a Key](#how-to-add-a-key)
-3. [Hybrid Cryptography Key Design Overview](#hybrid-cryptography-key-design-overview)
-4. [Supported Mechanisms](#supported-mechanisms)
-    - [Traditional Mechanisms](#traditional)
-    - [PQ Combined Mechanisms](#pq-combined)
-
----
+To use post-quantum algorithms this test suite uses (Open Quantum Safe)[https://github.com/open-quantum-safe/liboqs-python]. 
+- By setting up through the docker image this is already included. 
+- If you didn´t use the docker image to set up the test suite, this still need to be set up. You can use the bash `script /scripts/setup_pq.sh` for this. 
 
 ### Glossary
 
@@ -122,13 +115,6 @@ The following post-quantum combined mechanisms are supported:
 - **Composite KEM**: Merges traditional and PQ cryptography.
 - **Composite KEM KMAC**: A variant of Composite KEM (now expired).
 
----
-
-
-### Planned Updates
-- Including FN-DSA, after the Standardization is finalized.
-- Transition to standardized OIDs as they become available.
-- Enhanced examples for integrating hybrid cryptography into existing workflows.
 
 ---
 
