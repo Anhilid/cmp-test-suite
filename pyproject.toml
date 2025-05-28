@@ -2,16 +2,15 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-
 # ###################################################################
 # pylint options:
 # ###################################################################
 
 [tool.pylint.FORMAT]
-max-line-length=120
+max-line-length = 120
 
 [tool.pylint.MASTER]
-ignore=venv*
+ignore = "venv*"
 
 # ###################################################################
 # pyright options:
@@ -25,8 +24,7 @@ exclude = [
     "./pq_logic/fips/*.py",
     "./pq_logic/keys/abstract_pq.py",
     "./pq_logic/keys/*.py"
-  ]
-
+]
 
 # ###################################################################
 # robot options:
@@ -90,3 +88,41 @@ configure = [
     "RenameKeywords:replace_pattern=GeneralInfo:replace_to=generalInfo",
     "RenameKeywords:replace_pattern=ProtectionAlg:replace_to=protectionAlg",
 ]
+
+# ###################################################################
+# ruff options:
+# ###################################################################
+
+[tool.ruff]
+src = ["resources"]
+exclude = [
+    "venv*", 
+    "unit_tests", 
+    "config", 
+    "tests", 
+    "doc", 
+    "pq_logic/fips/*",
+    "scripts/docstring-check.py", 
+    "scripts/add_license.py", 
+    "scripts/write_stats.py"
+]
+line-length = 120
+respect-gitignore = true
+
+[tool.ruff.lint]
+ignore = ["D415", "D400", "D213", "D212", "D203"]
+select = [
+    "F", # pyflakes
+    "E", "W", # Pycodestyle
+    "I", # isort
+    "D",  # docstring checker
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["pq_logic", "resources", "unit_tests"]
+
+[tool.ruff.format]
+docstring-code-format = true
+exclude = ["D213", "D212", "D211", "D200"]
+indent-style = "space"
+
