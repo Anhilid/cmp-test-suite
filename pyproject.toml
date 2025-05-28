@@ -2,11 +2,35 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+
+# ###################################################################
+# pylint options:
+# ###################################################################
+
 [tool.pylint.FORMAT]
 max-line-length=120
 
 [tool.pylint.MASTER]
 ignore=venv*
+
+# ###################################################################
+# pyright options:
+# ###################################################################
+
+[tool.pyright]
+include = ["./resources", "./pq_logic"]
+exclude = [
+    "./unit_tests",
+    "./pq_logic/hybrid_structures.py",
+    "./pq_logic/fips/*.py",
+    "./pq_logic/keys/abstract_pq.py",
+    "./pq_logic/keys/*.py"
+  ]
+
+
+# ###################################################################
+# robot options:
+# ###################################################################
 
 [tool.robotidy]
 diff = true
