@@ -2,6 +2,12 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+[tool.pylint.FORMAT]
+max-line-length=120
+
+[tool.pylint.MASTER]
+ignore=venv*
+
 [tool.robotidy]
 diff = true
 overwrite = false
